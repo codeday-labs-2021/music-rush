@@ -1,0 +1,15 @@
+/Users/natalia.gourova/music-rush/bin/Debug/net5.0/music-rush.deps.json
+/Users/natalia.gourova/music-rush/bin/Debug/net5.0/music-rush.runtimeconfig.json
+/Users/natalia.gourova/music-rush/bin/Debug/net5.0/music-rush.runtimeconfig.dev.json
+/Users/natalia.gourova/music-rush/bin/Debug/net5.0/music-rush.dll
+/Users/natalia.gourova/music-rush/bin/Debug/net5.0/ref/music-rush.dll
+/Users/natalia.gourova/music-rush/bin/Debug/net5.0/music-rush.pdb
+/Users/natalia.gourova/music-rush/obj/Debug/net5.0/music-rush.csproj.AssemblyReference.cache
+/Users/natalia.gourova/music-rush/obj/Debug/net5.0/music-rush.GeneratedMSBuildEditorConfig.editorconfig
+/Users/natalia.gourova/music-rush/obj/Debug/net5.0/music-rush.AssemblyInfoInputs.cache
+/Users/natalia.gourova/music-rush/obj/Debug/net5.0/music-rush.AssemblyInfo.cs
+/Users/natalia.gourova/music-rush/obj/Debug/net5.0/music-rush.csproj.CoreCompileInputs.cache
+/Users/natalia.gourova/music-rush/obj/Debug/net5.0/music-rush.dll
+/Users/natalia.gourova/music-rush/obj/Debug/net5.0/ref/music-rush.dll
+/Users/natalia.gourova/music-rush/obj/Debug/net5.0/music-rush.pdb
+/Users/natalia.gourova/music-rush/obj/Debug/net5.0/music-rush.genruntimeconfig.cache
