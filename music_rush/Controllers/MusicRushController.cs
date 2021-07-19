@@ -3,22 +3,22 @@ using System.Text.Encodings.Web;
 
 namespace music_rush.Controllers
 {
-    public class HelloWorldController : Controller
+    public class MusicRushController : Controller
     {
         // 
-        // GET: /HelloWorld/
-
-        public string Index()
+        // GET: /MusicRush/
+        public IActionResult Index()
         {
-            return "This is my default action...";
+            return View();
+
+        }
+        public IActionResult Welcome(string name, int numTimes = 1)
+        {
+            ViewData["Message"] = "Hello " + name;
+            ViewData["NumTimes"] = numTimes;
+
+            return View();
         }
 
-        // 
-        // GET: /HelloWorld/Welcome/ 
-
-        public string Welcome()
-        {
-            return "This is the Welcome action method...";
-        }
     }
 }
