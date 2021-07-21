@@ -6,7 +6,7 @@ namespace music_rush.Controllers
     public class MusicRushController : Controller
     {
         // 
-        // GET: /MusicRush/
+        // GET: / 
         public IActionResult Index()
         {
             return View();
