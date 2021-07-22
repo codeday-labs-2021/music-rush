@@ -26,27 +26,27 @@ namespace musicrush
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddRazorPages();
             if (Environment.IsDevelopment())
             {
                 services.AddDbContext<RazorPagesSongContext>(options =>
                 options.UseSqlite(
                     Configuration.GetConnectionString("RazorPagesSongContext")));
-                
+
                 services.AddDbContext<RazorPagesAlbumContext>(options =>
                 options.UseSqlite(
                     Configuration.GetConnectionString("RazorPagesAlbumContext")));
             }
             else
             {
-            services.AddDbContext<RazorPagesSongContext>(options =>
-            options.UseSqlServer(
-                Configuration.GetConnectionString("MovieContext")));
-            
-            services.AddDbContext<RazorPagesAlbumContext>(options =>
-            options.UseSqlServer(
-                Configuration.GetConnectionString("AlbumContext")));
+                services.AddDbContext<RazorPagesSongContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("MovieContext")));
+
+                services.AddDbContext<RazorPagesAlbumContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("AlbumContext")));
             }
-            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -67,7 +67,7 @@ namespace musicrush
             app.UseStaticFiles();
 
             app.UseRouting();
-// Next line is not in the tutorial
+            // Next line is not in the tutorial
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

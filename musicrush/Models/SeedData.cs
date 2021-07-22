@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Data;
+using System.Data;
 using System;
 using System.Linq;
 using System.ComponentModel.DataAnnotations;
