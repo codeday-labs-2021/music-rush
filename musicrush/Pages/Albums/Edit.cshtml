@@ -1,4 +1,4 @@
-@page
+@page "{id:int?}"
 @model musicrush.Pages.Albums.EditModel
 
 @{
@@ -46,5 +46,5 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
