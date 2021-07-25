@@ -3,9 +3,6 @@ for details on configuring this project to bundle and minify static web assets. 
 * {
   color: white;
 }
-.main-bod {
-  margin: 0 !important;
-}
 
 body {
   background-color: #212124;
@@ -97,24 +94,27 @@ body {
 }
 
 .card {
-  width: 419px;
+  /* width: 419px; */
   height: 127px;
   background-color: #212124;
   border: 2px solid #7879f1;
   border-radius: 33px;
   word-wrap: unset !important;
   overflow: hidden;
-  padding: 1em;
+  /* padding: 1em; */
+}
+.text-box {
+  margin-left: 0px;
 }
 
-.textBox span {
+.text-box span {
   position: absolute;
   white-space: nowrap !important;
   transform: translateX(0);
   transition: 1s;
 }
-.textBox:hover span {
-  transform: translateX(calc(500px - 100%));
+.text-box:hover span {
+  transform: translateX(calc(0px - 100%));
 }
 
 /* Song page/wrapper */
