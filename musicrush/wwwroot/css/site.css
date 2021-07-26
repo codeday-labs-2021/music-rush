@@ -18,7 +18,10 @@ a.navbar-brand {
   text-align: center;
   word-break: break-all;
 }
-
+.brand-name {
+  font-family: "Ranga", cursive;
+  font-size: x-large;
+}
 /* Provide sufficient contrast against white background */
 a {
   color: white;
