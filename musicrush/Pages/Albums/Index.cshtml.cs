@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -25,9 +24,18 @@ namespace musicrush.Pages.Albums
         public SelectList Genres { get; set; }
         [BindProperty(SupportsGet = true)]
         public string AlbumGenre { get; set; }
+        public SelectList Artist {get; set;}
+        [BindProperty(SupportsGet = true)]
+        public string AlbumArtist {get; set; }
         public async Task OnGetAsync()
         {
-            Album = await _context.Album.ToListAsync();
-        }
+            var albums = from a in _context.Album
+                 select a;
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                albums = albums.Where(s => s.Title.Contains(SearchString));
+            }          
+            Album = await albums.ToListAsync();
+        } 
     }
 }
