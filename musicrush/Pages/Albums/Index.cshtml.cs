@@ -34,7 +34,15 @@ namespace musicrush.Pages.Albums
             if (!string.IsNullOrEmpty(SearchString))
             {
                 albums = albums.Where(s => s.Title.Contains(SearchString));
-            }          
+            }
+            if (!string.IsNullOrEmpty(AlbumGenre))
+            {
+                albums = albums.Where(a => a.Genre.Contains(AlbumGenre));
+            } 
+            if (!string.IsNullOrEmpty(AlbumArtist))  
+            {
+                albums = albums.Where(a => a.Artist.Contains(AlbumArtist));
+            }       
             Album = await albums.ToListAsync();
         } 
     }
