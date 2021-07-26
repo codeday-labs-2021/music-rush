@@ -5,11 +5,39 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Albums</h1>
+<h1 >Albums</h1>
 
+<div class="b-space">
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Add New Album</a>
 </p>
+</div>
+
+<div class="b-space">
+<p>
+    Search By:
+</p>
+
+<form>
+    <p>
+        Genre: 
+        <select asp-for="AlbumGenre" asp-items="Model.Genres" class="text-dark">      
+        <option value="">All</option>
+        </select>
+    </p>
+    <p>
+        Artist:
+        <select asp-for="AlbumArtist" asp-items="Model.Artists" class="text-dark">
+        <option value="">All</option>
+        </select>
+    </p>
+    <p>
+        Title: <input type="text" asp-for="SearchString" placeholder="search..." class="text-dark"/>
+        <input type="submit" value="Search" class="text-dark"/>
+    </p>
+</form>
+</div>
+
 <table class="table">
     <thead>
         <tr>
