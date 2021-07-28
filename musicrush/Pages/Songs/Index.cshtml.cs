@@ -35,7 +35,7 @@ namespace musicrush.Pages.Songs
                         select s;
             if (!string.IsNullOrEmpty(SearchString))
             {
-                songs = songs.Where(s => s.Title.Contains(SearchString));
+                songs = songs.Where(s => s.Title.ToUpper().Contains(SearchString.ToUpper()));
             }
             if (!string.IsNullOrEmpty(SongGenre))
             {
