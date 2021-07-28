@@ -39,6 +39,9 @@ a {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+.b-space {
+  padding: 0 0 3em 0;
+}
 
 /* Sticky footer styles
 -------------------------------------------------- */
