@@ -8,6 +8,9 @@ body {
   background-color: #212124;
   overflow-x: hidden;
 }
+.main-bod {
+  max-width: 90vw;
+}
 nav {
   background-color: #7879f1 !important;
   border-bottom: 1px solid #7879f1 !important;
@@ -25,6 +28,7 @@ a.navbar-brand {
 /* Provide sufficient contrast against white background */
 a {
   color: white;
+  text-decoration: none !important;
 }
 
 .btn-primary {
@@ -93,15 +97,14 @@ body {
 /* Song page/wrapper */
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  /* grid-auto-rows: 100px; */
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  grid-gap: 20px;
   width: 100%;
 }
 
 .card {
-  /* width: 419px; */
-  height: 127px;
+  min-width: 350px;
+  height: 125px;
   background-color: #212124;
   border: 2px solid #7879f1;
   border-radius: 33px;
@@ -109,13 +112,23 @@ body {
   overflow: hidden;
   /* padding: 1em; */
 }
+img.card-img-top {
+  display: block;
+  margin: 20px auto 20px 20px;
+  height: auto;
+  width: 80px;
+}
 .card-title {
   white-space: nowrap;
 }
-.text-box {
-  margin-left: 0px;
+span.card-text {
+  white-space: nowrap;
 }
 
+.text-box {
+  margin-left: 0px;
+  overflow-x: hidden;
+}
 .text-box span {
   position: absolute;
   white-space: nowrap !important;
@@ -123,7 +136,7 @@ body {
   transition: 1s;
 }
 .text-box:hover span {
-  transform: translateX(calc(0px - 100%));
+  transform: translateX(calc(100px - 100%));
 }
 
 /* Song page/wrapper */
