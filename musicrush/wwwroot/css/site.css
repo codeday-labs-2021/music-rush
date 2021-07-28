@@ -21,6 +21,18 @@ a.navbar-brand {
   text-align: center;
   word-break: break-all;
 }
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+select#SongGenre {
+  height: 55px;
+  border: none;
+  border-left: 4px solid #7879f1;
+  font-weight: 400;
+}
 .brand-name {
   font-family: "Ranga", cursive;
   font-size: x-large;
@@ -140,3 +152,51 @@ span.card-text {
 }
 
 /* Song page/wrapper */
+
+/* Search Bar */
+form.row {
+  justify-content: center;
+  margin-bottom: 5em;
+}
+.search-bar {
+  padding: 0px 10px 0 20px;
+  margin-top: 10px;
+  color: #333;
+  background-color: #fff;
+  font-size: 28px;
+  font-weight: 500;
+  border: 3px solid #7879f1;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  min-height: 60px;
+  height: auto;
+  border-radius: 50px 0 0 50px !important;
+}
+input#SearchString {
+  height: 55px;
+  border: none;
+}
+
+.search-bar :focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.search-btn {
+  border: 0;
+  padding: 0px 10px;
+  margin-top: 10px;
+  color: #fff;
+  background: #7879f1;
+  font-size: 27px;
+  font-weight: 500;
+  border: 3px solid #7879f1;
+  border-left: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  min-height: 60px;
+  height: auto;
+  border-radius: 0 50px 50px 0 !important;
+}
+/* Search Bar */
