@@ -39,6 +39,11 @@
                 <span asp-validation-for="Song.Album" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Song.Rating" class="control-label"></label>
+                <input asp-for="Song.Rating" class="form-control" />
+                <span asp-validation-for="Song.Rating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
@@ -50,5 +55,5 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

@@ -106,6 +106,9 @@ body {
   overflow: hidden;
   /* padding: 1em; */
 }
+.card-title {
+  white-space: nowrap;
+}
 .text-box {
   margin-left: 0px;
 }

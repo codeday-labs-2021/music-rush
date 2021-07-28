@@ -72,6 +72,9 @@
                                 <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
                                 <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
                             </span>
+                            <p class="rating">
+                                @Html.DisplayFor(modelItem => item.Rating)
+                            </p>
                         </div>
 
                     </div>
