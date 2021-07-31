@@ -40,8 +40,14 @@
                 <span asp-validation-for="Song.Album" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Song.Rating" class="control-label"></label>
+                <input asp-for="Song.Rating" class="form-control" type="number" min="0" max="5" />
+                <span asp-validation-for="Song.Rating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
+
         </form>
     </div>
 </div>

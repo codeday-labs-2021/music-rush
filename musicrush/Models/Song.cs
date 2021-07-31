@@ -16,5 +16,7 @@ namespace musicrush.Models
         public string Genre { get; set; }
         public string Artist { get; set; }
         public string Album { get; set; }
+        public int Rating { get; set; }
+
     }
 }

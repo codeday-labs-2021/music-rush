@@ -41,7 +41,7 @@ namespace musicrush
             {
                 services.AddDbContext<RazorPagesSongContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("MovieContext")));
+                    Configuration.GetConnectionString("SongContext")));
 
                 services.AddDbContext<RazorPagesAlbumContext>(options =>
                 options.UseSqlServer(

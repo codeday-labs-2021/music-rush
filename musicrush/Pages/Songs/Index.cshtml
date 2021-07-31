@@ -10,14 +10,14 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
-<form>
-    <p>
-        Title: <input type="text" asp-for="SearchString" placeholder="search..." class="text-dark" />
-        <select asp-for="SongGenre" asp-items="Model.Genres" placeholder="Genre..." class="text-dark">
-            <option value="">All</option>
+<form class="row">
+    <div class="search-bar">
+        <input type="text" asp-for="SearchString" placeholder="search..." class="text-dark search-box" />
+        <select asp-for="SongGenre" asp-items="Model.Genres" placeholder="Genre..." class="text-muted search-genre">
+            <option value="">Genre</option>
         </select>
-        <input type="submit" value="Filter" class="text-dark" />
-    </p>
+    </div>
+    <button type="submit" value="Search" class="text-dark search-btn"><i class="fas fa-search"></i></button>
 </form>
 <table class="table">
     @* <thead>
@@ -43,36 +43,44 @@
     <div class="wrapper">
         @foreach (var item in Model.Song)
         {
-            <div class="card">
-                <div class="row">
-                    <div class="col-3 album-art">
-                        <p>X</p>
-                    </div>
-                    <div class=col>
-                        <div class="row text-box"><span>
-                                @Html.DisplayFor(modelItem => item.Title)
-                            </span></div>
-                        @* <div class="col-2 text-box"><span>
-                            @Html.DisplayFor(modelItem => item.ReleaseDate)
-                            </span></div> *@
-                        @* <div class="col-2 text-box"><span>
-                            @Html.DisplayFor(modelItem => item.Genre)
-                            </span></div> *@
-                        <div class="row text-box"><span>
-                                @Html.DisplayFor(modelItem => item.Artist)
-                            </span></div>
-                        @* <div class="col-2 text-box"><span>
-                            @Html.DisplayFor(modelItem => item.Album)
-                            </span></div> *@
-                    </div>
-                    <div class="col-2 text-box"><span>
-                            <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                            <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                            <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-                        </span>
+            <a asp-page="./Details" asp-route-id="@item.ID">
+                <div class="card">
+                    <div class="row no-gutters">
+                        <div class="col-sm-3">
+                            <img src="https://picsum.photos/1000" class="card-img-top" alt="placeholder img">
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    @Html.DisplayFor(modelItem => item.Title)
+                                </h5>
+                                @* <div class="col-2 text-box"><span>
+                                    @Html.DisplayFor(modelItem => item.ReleaseDate)
+                                    </span></div> *@
+                                @* <div class="col-2 text-box"><span>
+                                    @Html.DisplayFor(modelItem => item.Genre)
+                                    </span></div> *@
+                                <span class="card-text">
+                                    @Html.DisplayFor(modelItem => item.Artist)
+                                </span>
+                                @* <div class="col-2 text-box"><span>
+                                    @Html.DisplayFor(modelItem => item.Album)
+                                    </span>
+                                    </div>*@
+                                @* <span>
+                                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                                    </span> *@
+                                <p class="rating">
+                                    Rating: @Html.DisplayFor(modelItem => item.Rating)/5
+                                </p>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
         }
     </div>
 </table>

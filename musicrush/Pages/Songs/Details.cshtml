@@ -41,9 +41,16 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Song.Album)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Song.Rating)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Song.Rating)
+        </dd>
     </dl>
 </div>
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.Song.ID">Edit</a> |
+    <a asp-page="./Delete" asp-route-id="@Model.Song.ID">Delete</a> |
     <a asp-page="./Index">Back to List</a>
 </div>
