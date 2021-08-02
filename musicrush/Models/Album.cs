@@ -8,6 +8,7 @@ namespace musicrush.Models
     public class Album
     {
         public int ID { get; set; }
+        [StringLength(60, MinimumLength = 3)]
         public string Title { get; set; }
 
         [Display(Name = "Release Date")]
@@ -15,5 +16,7 @@ namespace musicrush.Models
         public DateTime ReleaseDate { get; set; }
         public string Genre { get; set; }
         public string Artist { get; set; }
+        [Range(1,5)]
+        public int Rating { get; set; }
     }
 }
