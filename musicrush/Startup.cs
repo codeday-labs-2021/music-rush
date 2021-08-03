@@ -33,9 +33,9 @@ namespace musicrush
                 options.UseSqlite(
                     Configuration.GetConnectionString("RazorPagesSongContext")));
 
-                services.AddDbContext<RazorPagesAlbumContext>(options =>
+                services.AddDbContext<RazorPagesSongContext>(options =>
                 options.UseSqlite(
-                    Configuration.GetConnectionString("RazorPagesAlbumContext")));
+                    Configuration.GetConnectionString("RazorPagesSongContext")));
             }
             else
             {
@@ -43,7 +43,7 @@ namespace musicrush
                 options.UseSqlServer(
                     Configuration.GetConnectionString("SongContext")));
 
-                services.AddDbContext<RazorPagesAlbumContext>(options =>
+                services.AddDbContext<RazorPagesSongContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("AlbumContext")));
             }

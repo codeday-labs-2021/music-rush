@@ -11,9 +11,9 @@ namespace musicrush.Pages.Albums
 {
     public class CreateModel : PageModel
     {
-        private readonly RazorPagesAlbumContext _context;
+        private readonly RazorPagesSongContext _context;
 
-        public CreateModel(RazorPagesAlbumContext context)
+        public CreateModel(RazorPagesSongContext context)
         {
             _context = context;
         }
@@ -34,7 +34,7 @@ namespace musicrush.Pages.Albums
                 return Page();
             }
 
-            _context.Album.Add(Album);
+            _context.Albums.Add(Album);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

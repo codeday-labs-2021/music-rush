@@ -2,14 +2,16 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace musicrush.Migrations
 {
     [DbContext(typeof(RazorPagesSongContext))]
-    partial class RazorPagesSongContextModelSnapshot : ModelSnapshot
+    [Migration("20210802205137_initial")]
+    partial class initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,7 +29,7 @@ namespace musicrush.Migrations
                     b.Property<string>("Genre")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("Rating")
+                    b.Property<int>("Rating")
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("ReleaseDate")
@@ -48,7 +50,7 @@ namespace musicrush.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("AlbumId")
+                    b.Property<int?>("AlbumID")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Artist")
@@ -57,7 +59,7 @@ namespace musicrush.Migrations
                     b.Property<string>("Genre")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("Rating")
+                    b.Property<int>("Rating")
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("ReleaseDate")
@@ -68,7 +70,7 @@ namespace musicrush.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("AlbumId");
+                    b.HasIndex("AlbumID");
 
                     b.ToTable("Song");
                 });
@@ -77,9 +79,7 @@ namespace musicrush.Migrations
                 {
                     b.HasOne("musicrush.Models.Album", "Album")
                         .WithMany("Songs")
-                        .HasForeignKey("AlbumId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AlbumID");
 
                     b.Navigation("Album");
                 });

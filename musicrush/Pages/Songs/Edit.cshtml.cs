@@ -29,7 +29,7 @@ namespace musicrush.Pages.Songs
                 return NotFound();
             }
 
-            Song = await _context.Song.FirstOrDefaultAsync(m => m.ID == id);
+            Song = await _context.Songs.FirstOrDefaultAsync(m => m.ID == id);
 
             if (Song == null)
             {
@@ -70,7 +70,7 @@ namespace musicrush.Pages.Songs
 
         private bool SongExists(int id)
         {
-            return _context.Song.Any(e => e.ID == id);
+            return _context.Songs.Any(e => e.ID == id);
         }
     }
 }

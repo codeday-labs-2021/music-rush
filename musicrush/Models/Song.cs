@@ -5,9 +5,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace musicrush.Models
 {
+    [Table("Song")]
     public class Song
     {
         public int ID { get; set; }
+        public int AlbumId { get; set; }
         public string Title { get; set; }
 
         [Display(Name = "Release Date")]
@@ -15,8 +17,7 @@ namespace musicrush.Models
         public DateTime ReleaseDate { get; set; }
         public string Genre { get; set; }
         public string Artist { get; set; }
-        public string Album { get; set; }
-        public int Rating { get; set; }
-
+        public int? Rating { get; set; }
+        public Album Album { get; set; }
     }
 }

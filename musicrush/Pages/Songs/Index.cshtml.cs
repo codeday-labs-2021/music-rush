@@ -18,7 +18,6 @@ namespace musicrush.Pages.Songs
         {
             _context = context;
         }
-
         public IList<Song> Song { get; set; }
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; }
@@ -28,10 +27,10 @@ namespace musicrush.Pages.Songs
 
         public async Task OnGetAsync()
         {
-            IQueryable<string> genreQuery = from s in _context.Song
+            IQueryable<string> genreQuery = from s in _context.Songs
                                             orderby s.Genre
                                             select s.Genre;
-            var songs = from s in _context.Song
+            var songs = from s in _context.Songs
                         select s;
             if (!string.IsNullOrEmpty(SearchString))
             {
