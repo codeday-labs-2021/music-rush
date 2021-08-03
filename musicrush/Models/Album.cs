@@ -21,6 +21,6 @@ namespace musicrush.Models
         [Range(1,5)]
         public int? Rating { get; set; }
 
-        public List<Song> Songs { get; set; }
+        public virtual List<Song> Songs { get; set; }
     }
 }

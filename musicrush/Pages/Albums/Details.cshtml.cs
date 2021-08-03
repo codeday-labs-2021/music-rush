@@ -27,7 +27,10 @@ namespace musicrush.Pages.Albums
                 return NotFound();
             }
 
-            Album = await _context.Albums.FirstOrDefaultAsync(m => m.ID == id);
+            Album = await _context
+                            .Albums
+                            .Include(a => a.Songs)
+                            .FirstOrDefaultAsync(m => m.ID == id);
 
             if (Album == null)
             {
