@@ -53,6 +53,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Album[0].Artist)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Album[0].Rating)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -71,6 +74,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Artist)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rating)
                 </td>
                 <td>
                     <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |

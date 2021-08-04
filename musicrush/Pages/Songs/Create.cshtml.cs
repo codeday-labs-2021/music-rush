@@ -34,7 +34,7 @@ namespace musicrush.Pages.Songs
                 return Page();
             }
 
-            _context.Song.Add(Song);
+            _context.Songs.Add(Song);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

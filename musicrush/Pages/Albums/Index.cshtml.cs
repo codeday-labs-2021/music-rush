@@ -11,9 +11,9 @@ namespace musicrush.Pages.Albums
 {
     public class IndexModel : PageModel
     {
-        private readonly RazorPagesAlbumContext _context;
+        private readonly RazorPagesSongContext _context;
 
-        public IndexModel(RazorPagesAlbumContext context)
+        public IndexModel(RazorPagesSongContext context)
         {
             _context = context;
         }
@@ -30,35 +30,14 @@ namespace musicrush.Pages.Albums
         public async Task OnGetAsync()
         {
             //Use LINQ to get list of genres and artists.
-            IQueryable<string> genreQuery = from a in _context.Album
+            IQueryable<string> genreQuery = from a in _context.Albums
                                             orderby a.Genre
                                             select a.Genre;
-            IQueryable<string> artistQuery = from a in _context.Album
+            IQueryable<string> artistQuery = from a in _context.Albums
                                             orderby a.Artist
                                             select a.Artist;
-// public async Task OnGetAsync()
-// {
-//     // Use LINQ to get list of genres.
-//     IQueryable<string> genreQuery = from m in _context.Movie
-//                                     orderby m.Genre
-//                                     select m.Genre;
-
-//     var movies = from m in _context.Movie
-//                  select m;
-
-//     if (!string.IsNullOrEmpty(SearchString))
-//     {
-//         movies = movies.Where(s => s.Title.Contains(SearchString));
-//     }
-
-//     if (!string.IsNullOrEmpty(MovieGenre))
-//     {
-//         movies = movies.Where(x => x.Genre == MovieGenre);
-//     }
-//     Genres = new SelectList(await genreQuery.Distinct().ToListAsync());
-//     Movie = await movies.ToListAsync();
-// }            
-            var albums = from a in _context.Album
+           
+            var albums = from a in _context.Albums
                  select a;
             if (!string.IsNullOrEmpty(SearchString))
             {

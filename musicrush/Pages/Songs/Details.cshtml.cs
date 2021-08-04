@@ -27,7 +27,7 @@ namespace musicrush.Pages.Songs
                 return NotFound();
             }
 
-            Song = await _context.Song.FirstOrDefaultAsync(m => m.ID == id);
+            Song = await _context.Songs.FirstOrDefaultAsync(m => m.ID == id);
 
             if (Song == null)
             {

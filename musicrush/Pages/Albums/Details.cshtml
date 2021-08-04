@@ -5,10 +5,8 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
-
 <div>
-    <h4>Album</h4>
+    <h4>Album Details</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -34,6 +32,43 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Album.Artist)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Album.Rating)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Album.Rating)
+        </dd>
+                <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Album.Songs)
+        </dt>
+        <dd class="col-sm-10">
+            <table class="table">
+                <tr>
+                    <th>Song Title</th>
+                    <th>Song Rating</th>
+                </tr>
+                @* <tr>
+                    <td>
+                        @Html.DisplayFor(x => this.Model.Album)
+                    </td>
+                    <td>
+                        test: @Html.DisplayFor(x => Model.Album.Songs[0]) *@
+                        @* @Html.DisplayFor(modelItem => item.Artist) *@
+                    @* </td>
+                </tr> *@
+                @foreach (var item in this.Model.Album.Songs)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Rating)
+                        </td>
+                    </tr>
+                }
+            </table>
         </dd>
     </dl>
 </div>

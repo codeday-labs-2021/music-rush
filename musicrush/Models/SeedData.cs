@@ -10,6 +10,7 @@ namespace musicrush.Models
 {
     public static class SeedData
     {
+
         public static void Initialize(IServiceProvider serviceProvider)
         {
             using (var context = new RazorPagesSongContext(
@@ -17,50 +18,159 @@ namespace musicrush.Models
                     DbContextOptions<RazorPagesSongContext>>()))
             {
                 // Look for any Songs.
-                if (context.Song.Any())
+                if (context.Songs.Any())
                 {
                     return;   // DB has been seeded
                 }
 
-                context.Song.AddRange(
-                    new Song
+
+                Album[] Albums = new Album[]
+                       {
+                   new Album
                     {
-                        Title = "Church",
+                        Title = "Movin",
                         ReleaseDate = DateTime.Parse("2019-1-18"),
                         Genre = "R&B",
                         Artist = "Samm Henshaw",
-                        Rating = 5
-
+                        Rating = 4
                     },
-
-                    new Song
+                    new Album
                     {
-                        Title = "Unemployed",
+                        Title = "Case of Mondays",
                         ReleaseDate = DateTime.Parse("2019-4-10"),
                         Genre = "Rap",
                         Artist = "Tierra Whack",
                         Rating = 5
                     },
-
-                    new Song
+                    new Album
                     {
-                        Title = "Link",
-                        ReleaseDate = DateTime.Parse("2021-4-06"),
-                        Genre = "Hip-Hop",
-                        Artist = "Tierra Whack",
-                        Rating = 5
-                    },
-
-                    new Song
-                    {
-                        Title = "Welcome to the Family",
+                        Title = "Little Big",
                         ReleaseDate = DateTime.Parse("2018-8-03"),
                         Genre = "Rap",
                         Artist = "Watsky",
-                        Rating = 5
+                        Rating = 1
                     }
-                );
+                       };
+
+                context.Albums.AddRange(Albums);
                 context.SaveChanges();
+
+                 Song[] Songs = new Song[]{
+                    new Song
+                    {
+                        Title = "WannaBe",
+                        // Album = Albums[0],
+                        AlbumId = Albums[0].ID,
+                        // AlbumId = 1,
+                        ReleaseDate = DateTime.Parse("2019-1-18"),
+                        Genre = "R&B",
+                        Artist = "Samm Henshaw",
+                        Rating = 4
+                    },
+                    new Song
+                    {
+                        Title = "Kicking It",
+                        // Album = Albums[1],
+                        AlbumId = Albums[1].ID,
+                        // AlbumId = 2,
+                        ReleaseDate = DateTime.Parse("2019-4-10"),
+                        Genre = "Rap",
+                        Artist = "Tierra Whack",
+                        Rating = 5
+                    },
+                    new Song
+                    {
+                        Title = "Link",
+                        // Album = Albums[1],
+                        AlbumId = Albums[1].ID,
+                        // AlbumId = 2,
+                        ReleaseDate = DateTime.Parse("2021-4-06"),
+                        Genre = "Hip-Hop",
+                        Artist = "Tierra Whack",
+                        Rating = 2
+                    },
+                    new Song
+                    {
+                        Title = "Link 2",
+                        // Album = Albums[1],
+                        AlbumId = Albums[1].ID,
+                        // AlbumId = 2,
+                        ReleaseDate = DateTime.Parse("2021-4-06"),
+                        Genre = "Hip-Hop",
+                        Artist = "Tierra Whack",
+                        Rating = 2
+                    },
+                    new Song
+                    {
+                        Title = "Link 3",
+                        // Album = Albums[1],
+                        AlbumId = Albums[1].ID,
+                        // AlbumId = 2,
+                        ReleaseDate = DateTime.Parse("2021-4-06"),
+                        Genre = "Hip-Hop",
+                        Artist = "Tierra Whack",
+                        Rating = 2
+                    },
+                    new Song
+                    {
+                        Title = "Welcome to the Family 1",
+                        // Album = Albums[2],
+                        AlbumId = Albums[2].ID,
+                        // AlbumId = 3,
+                        ReleaseDate = DateTime.Parse("2018-8-03"),
+                        Genre = "Rap",
+                        Artist = "Watsky",
+                        Rating = 1
+                    },
+                    new Song
+                    {
+                        Title = "Welcome to the Family 2",
+                        // Album = Albums[2],
+                        AlbumId = Albums[2].ID,
+                        // AlbumId = 3,
+                        ReleaseDate = DateTime.Parse("2018-8-03"),
+                        Genre = "Rap",
+                        Artist = "Watsky",
+                        Rating = 1
+                    },
+                    new Song
+                    {
+                        Title = "Welcome to the Family 3",
+                        // Album = Albums[2],
+                        AlbumId = Albums[2].ID,
+                        // AlbumId = 3,
+                        ReleaseDate = DateTime.Parse("2018-8-03"),
+                        Genre = "Rap",
+                        Artist = "Watsky",
+                        Rating = 1
+                    },
+                    new Song
+                    {
+                        Title = "Welcome to the Family 3",
+                        // Album = Albums[2],
+                        AlbumId = Albums[2].ID,
+                        // AlbumId = 3,
+                        ReleaseDate = DateTime.Parse("2018-8-03"),
+                        Genre = "Rap",
+                        Artist = "Watsky",
+                        Rating = 1
+                    }
+                };
+
+                // Albums[0].Songs.Append(Songs[0]);
+                // Albums[1].Songs.Append(Songs[1]);
+                // Albums[1].Songs.Append(Songs[2]);
+                // Albums[2].Songs.Append(Songs[3]);
+
+                context.Songs.AddRange(Songs);
+                context.SaveChanges();
+                // foreach(Album a: Albums) {
+                //     foreach(Song s: Songs) {
+                //         if (s.Album == a) {
+                //             a.Songs.add(s);
+                //         }
+                //     }
+                // }
             }
         }
     }
