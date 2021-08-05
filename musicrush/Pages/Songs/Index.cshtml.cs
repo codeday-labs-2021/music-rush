@@ -26,7 +26,7 @@ namespace musicrush.Pages.Songs
         public string SongGenre { get; set; }
 
         public async Task OnGetAsync()
-        {
+        {     
             IQueryable<string> genreQuery = from s in _context.Songs
                                             orderby s.Genre
                                             select s.Genre;
@@ -41,7 +41,9 @@ namespace musicrush.Pages.Songs
                 songs = songs.Where(x => x.Genre == SongGenre);
             }
             Genres = new SelectList(await genreQuery.Distinct().ToListAsync());
-            Song = await songs.ToListAsync();
+            Song = await songs
+                            .Include(s => s.Album)
+                            .ToListAsync();
         }
     }
 }

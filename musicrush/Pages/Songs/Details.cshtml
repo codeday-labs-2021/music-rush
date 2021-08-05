@@ -39,13 +39,17 @@
             @Html.DisplayNameFor(model => model.Song.Album)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Song.Album)
+            @Html.DisplayFor(model => model.Song.Album.Title)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Song.Rating)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Song.Rating)
+            @{
+                var songStarRating = new String( '✭', this.Model.Song.Rating ?? 0);
+            }
+            @songStarRating
+            (@Html.DisplayFor(model => model.Song.Rating))        
         </dd>
     </dl>
 </div>

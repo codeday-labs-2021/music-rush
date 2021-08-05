@@ -20,6 +20,8 @@ namespace musicrush.Pages.Albums
 
         public Album Album { get; set; }
 
+        // public String StarRating { get; set; }
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -36,6 +38,9 @@ namespace musicrush.Pages.Albums
             {
                 return NotFound();
             }
+
+            // StarRating = new String( '✭', Album.Rating ?? 0);
+            
             return Page();
         }
     }

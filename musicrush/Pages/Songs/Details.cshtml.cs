@@ -19,6 +19,7 @@ namespace musicrush.Pages.Songs
         }
 
         public Song Song { get; set; }
+        public Album Album { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -27,7 +28,10 @@ namespace musicrush.Pages.Songs
                 return NotFound();
             }
 
-            Song = await _context.Songs.FirstOrDefaultAsync(m => m.ID == id);
+            Song = await _context
+                            .Songs
+                            .Include(a => a.Album)
+                            .FirstOrDefaultAsync(m => m.ID == id);
 
             if (Song == null)
             {
