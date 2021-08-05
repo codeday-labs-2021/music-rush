@@ -76,7 +76,11 @@
                     @Html.DisplayFor(modelItem => item.Artist)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Rating)
+                    @{
+                        var albumStarRating = new String( '✭', item.Rating ?? 0);
+                    }
+                    @albumStarRating
+                    (@Html.DisplayFor(modelItem => item.Rating))
                 </td>
                 <td>
                     <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
