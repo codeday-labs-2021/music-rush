@@ -5,12 +5,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace musicrush.Models
 {
+    [Table("Song")]
     public class Song
     {
         public int ID { get; set; }
-
-        [StringLength(60, MinimumLength = 3)]
-        [Required]
+        public int AlbumId { get; set; }
         public string Title { get; set; }
 
         [Display(Name = "Release Date")]
@@ -26,12 +25,7 @@ namespace musicrush.Models
         [Required]
         [StringLength(60)]
         public string Artist { get; set; }
-
-        [RegularExpression(@"^[A-Z]+[a-zA-Z\s]*$")]
-        [Required]
-        [StringLength(60)]
-        public string Album { get; set; }
-        public int Rating { get; set; }
-
+        public int? Rating { get; set; }
+        public Album Album { get; set; }
     }
 }

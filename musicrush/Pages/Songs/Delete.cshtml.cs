@@ -28,7 +28,7 @@ namespace musicrush.Pages.Songs
                 return NotFound();
             }
 
-            Song = await _context.Song.FirstOrDefaultAsync(m => m.ID == id);
+            Song = await _context.Songs.FirstOrDefaultAsync(m => m.ID == id);
 
             if (Song == null)
             {
@@ -44,11 +44,11 @@ namespace musicrush.Pages.Songs
                 return NotFound();
             }
 
-            Song = await _context.Song.FindAsync(id);
+            Song = await _context.Songs.FindAsync(id);
 
             if (Song != null)
             {
-                _context.Song.Remove(Song);
+                _context.Songs.Remove(Song);
                 await _context.SaveChangesAsync();
             }
 

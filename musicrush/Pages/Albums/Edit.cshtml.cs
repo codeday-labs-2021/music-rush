@@ -12,9 +12,9 @@ namespace musicrush.Pages.Albums
 {
     public class EditModel : PageModel
     {
-        private readonly RazorPagesAlbumContext _context;
+        private readonly RazorPagesSongContext _context;
 
-        public EditModel(RazorPagesAlbumContext context)
+        public EditModel(RazorPagesSongContext context)
         {
             _context = context;
         }
@@ -29,7 +29,7 @@ namespace musicrush.Pages.Albums
                 return NotFound();
             }
 
-            Album = await _context.Album.FirstOrDefaultAsync(m => m.ID == id);
+            Album = await _context.Albums.FirstOrDefaultAsync(m => m.ID == id);
 
             if (Album == null)
             {
@@ -70,7 +70,7 @@ namespace musicrush.Pages.Albums
 
         private bool AlbumExists(int id)
         {
-            return _context.Album.Any(e => e.ID == id);
+            return _context.Albums.Any(e => e.ID == id);
         }
     }
 }

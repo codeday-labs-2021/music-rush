@@ -11,9 +11,9 @@ namespace musicrush.Pages.Albums
 {
     public class DetailsModel : PageModel
     {
-        private readonly RazorPagesAlbumContext _context;
+        private readonly RazorPagesSongContext _context;
 
-        public DetailsModel(RazorPagesAlbumContext context)
+        public DetailsModel(RazorPagesSongContext context)
         {
             _context = context;
         }
@@ -27,7 +27,10 @@ namespace musicrush.Pages.Albums
                 return NotFound();
             }
 
-            Album = await _context.Album.FirstOrDefaultAsync(m => m.ID == id);
+            Album = await _context
+                            .Albums
+                            .Include(a => a.Songs)
+                            .FirstOrDefaultAsync(m => m.ID == id);
 
             if (Album == null)
             {

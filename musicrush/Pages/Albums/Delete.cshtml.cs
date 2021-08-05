@@ -11,9 +11,9 @@ namespace musicrush.Pages.Albums
 {
     public class DeleteModel : PageModel
     {
-        private readonly RazorPagesAlbumContext _context;
+        private readonly RazorPagesSongContext _context;
 
-        public DeleteModel(RazorPagesAlbumContext context)
+        public DeleteModel(RazorPagesSongContext context)
         {
             _context = context;
         }
@@ -28,7 +28,7 @@ namespace musicrush.Pages.Albums
                 return NotFound();
             }
 
-            Album = await _context.Album.FirstOrDefaultAsync(m => m.ID == id);
+            Album = await _context.Albums.FirstOrDefaultAsync(m => m.ID == id);
 
             if (Album == null)
             {
@@ -44,11 +44,11 @@ namespace musicrush.Pages.Albums
                 return NotFound();
             }
 
-            Album = await _context.Album.FindAsync(id);
+            Album = await _context.Albums.FindAsync(id);
 
             if (Album != null)
             {
-                _context.Album.Remove(Album);
+                _context.Albums.Remove(Album);
                 await _context.SaveChangesAsync();
             }
 
