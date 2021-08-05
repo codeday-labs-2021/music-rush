@@ -5,10 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using musicrush.Areas.Identity.Data;
 
 namespace musicrush.Areas.Identity.Data
 {
-    public class musicrushIdentityDbContext : IdentityDbContext<IdentityUser>
+    public class musicrushIdentityDbContext : IdentityDbContext<musicrushUser>
     {
         public musicrushIdentityDbContext(DbContextOptions<musicrushIdentityDbContext> options)
             : base(options)
