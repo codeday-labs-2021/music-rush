@@ -9,7 +9,7 @@ using musicrush.Areas.Identity.Data;
 
 namespace musicrush.Areas.Identity.Data
 {
-    public class musicrushIdentityDbContext : IdentityDbContext<musicrushUser>
+    public class musicrushIdentityDbContext : IdentityDbContext<IdentityUser>
     {
         public musicrushIdentityDbContext(DbContextOptions<musicrushIdentityDbContext> options)
             : base(options)
