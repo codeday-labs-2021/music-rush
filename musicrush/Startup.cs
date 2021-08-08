@@ -27,25 +27,18 @@ namespace musicrush
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            if (Environment.IsDevelopment())
-            {
-                services.AddDbContext<RazorPagesSongContext>(options =>
-                options.UseSqlite(
-                    Configuration.GetConnectionString("RazorPagesSongContext")));
-
-                services.AddDbContext<RazorPagesSongContext>(options =>
-                options.UseSqlite(
-                    Configuration.GetConnectionString("RazorPagesSongContext")));
-            }
-            else
+            // Bring this code back when in development
+            // if (Environment.IsDevelopment())
+            // {
+            //     services.AddDbContext<RazorPagesSongContext>(options =>
+            //     options.UseSqlite(
+            //         Configuration.GetConnectionString("RazorPagesSongContext")));
+            // }
+            // else
             {
                 services.AddDbContext<RazorPagesSongContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("SongContext")));
-
-                services.AddDbContext<RazorPagesSongContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("AlbumContext")));
+                    Configuration.GetConnectionString("MyDbConnection")));
             }
         }
 
