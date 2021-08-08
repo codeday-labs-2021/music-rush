@@ -5,7 +5,8 @@
     ViewData["Title"] = "Edit";
 }
 
-<h4>Update rating for</h4>
+<h4>Update Rating</h4>
+<h4>for</h4>
 <h1>@Html.DisplayFor(model => model.Song.Title)</h1>
 <hr />
 <div class="row">
@@ -52,9 +53,11 @@
     </div>
 </div>
 
-<div>
-    <a asp-page="./Index">Back to List</a>
-</div>
+@* <div>
+    <a asp-page="./Index">Take Me to Songs</a>
+    <p></p>
+    <a asp-page="../Albums/Index">Take Me to Albums</a>
+</div> *@
 
 @section Scripts {
 @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
