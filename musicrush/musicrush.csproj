@@ -20,6 +20,8 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="SpotifyAPI.Web" Version="6.2.1" />
+    <PackageReference Include="SpotifyAPI.Web.Auth" Version="6.2.1" />
   </ItemGroup>
 
 </Project>
