@@ -8,6 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using musicrush.Models;
+using SpotifyAPI.Web;
+
 
 namespace musicrush
 {
@@ -33,6 +35,20 @@ namespace musicrush
             }
 
             host.Run();
+        }
+        static async Task AccessToken()
+        {
+
+            var spotify = new SpotifyClient("BQALCwKpDXjlNOCoVbb19KIK4ozsssFy4fL82vROr1FOqYWDokW2gR4sNnXDWsTUSG6ILkuUFXIhM8WEfFWqERHLkKzMC3cqy72DPdF_76528cDYX0eT6H5idjwRGk_dqd5n6Dd2dgzNnI4");
+
+            var track = await spotify.Tracks.Get("1s6ux0lNiTziSrd7iUAADH");
+            Console.WriteLine(track.Name);
+        }
+        public class SpotifyToken
+        {
+            public string access_token { get; set; }
+            public string token_type { get; set; }
+            public int expires_in { get; set; }
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

@@ -23,5 +23,10 @@
     <PackageReference Include="SpotifyAPI.Web" Version="6.2.1" />
     <PackageReference Include="SpotifyAPI.Web.Auth" Version="6.2.1" />
   </ItemGroup>
+  <ItemGroup>
+  <Reference Include="SpotifyAPI.Web">
+    <HintPath>..\Dlls\SpotifyAPI.Web.dll</HintPath>
+  </Reference>
+</ItemGroup>
 
 </Project>
